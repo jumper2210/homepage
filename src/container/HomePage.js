@@ -1,6 +1,15 @@
-import React from 'react';
-import { Menu } from '../components/Menu';
+import React from 'react'
+import { Menu } from '../components/Menu'
+import { Grid } from '@mui/material'
+import { Hero } from '../components/Hero'
+import Quote from '../components/Quote'
 
 export const HomePage = () => {
-  return <Menu />;
-};
+  return (
+    <Grid>
+      <Menu />
+      <Hero />
+      <Quote />
+    </Grid>
+  )
+}
