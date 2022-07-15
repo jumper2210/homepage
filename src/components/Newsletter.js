@@ -5,7 +5,11 @@ export const Newsletter = () => {
   return (
     <Grid
       container
-      sx={{ pb: '128px', pt: '128px', alignItems: 'center' }}
+      sx={{
+        pb: { xs: '80px', lg: '128px' },
+        pt: { xs: '80px', lg: '128px' },
+        alignItems: 'center',
+      }}
       justifyContent='center'
     >
       <Grid
@@ -14,8 +18,9 @@ export const Newsletter = () => {
         sx={{
           justifyContent: 'space-between',
           flexDirection: 'column',
-          height: '238px',
-          width: '624px',
+          height: { xs: '330px', lg: '238px' },
+          width: { xs: '80vw', lg: '624px' },
+          alignItems: 'center',
         }}
       >
         <Grid
@@ -23,22 +28,31 @@ export const Newsletter = () => {
           sx={{
             color: '#231E1E',
             fontFamily: 'Inter',
-            fontSize: '40px',
-            lineHeight: '56px',
-            width: '624px',
+            fontSize: { xs: '30px', lg: '40px' },
+            lineHeight: { xs: '40px', lg: '56px' },
+            width: { xs: '80%', lg: '624px' },
             textAlign: 'center',
           }}
         >
           Sign up for Newsletter
         </Grid>
-        <Grid item sx={{ width: '624px' }}>
+        <Grid
+          item
+          sx={{
+            width: { xs: '90%', md: '624px' },
+            display: 'flex',
+            alignItems: 'center',
+
+            flexDirection: { xs: 'column', lg: 'row' },
+          }}
+        >
           <input
             placeholder=' Type your emails'
             id='your-mail'
             style={{
               backgroundColor: '#F1F0F0',
               borderRadius: '24px',
-              width: '416px',
+              width: '100%',
               height: '48px',
               borderWidth: 0,
               color: '#231E1E',
@@ -56,7 +70,8 @@ export const Newsletter = () => {
               height: '48px',
               textTransform: 'none',
               color: '#231E1E',
-              ml: '16px',
+              ml: { xs: '0', lg: '16px' },
+              mt: { xs: '20px', lg: '0' },
             }}
           >
             Submit
@@ -69,7 +84,6 @@ export const Newsletter = () => {
             fontFamily: 'Inter',
             fontSize: '14px',
             lineHeight: '22px',
-            width: '624px',
             textAlign: 'center',
           }}
         >

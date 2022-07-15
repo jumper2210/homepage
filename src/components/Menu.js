@@ -7,7 +7,7 @@ export const Menu = () => {
     <Grid
       container
       sx={{
-        height: '73px',
+        height: { xs: '150px', md: '100px', lg: '73px' },
         mt: '24px',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -15,21 +15,35 @@ export const Menu = () => {
         alignItems: 'center',
       }}
     >
-      <Grid xs='6' item container display='flex' justifyContent='space-evenly'>
-        <Grid item>
+      <Grid
+        xs={12}
+        md={12}
+        lg={6}
+        item
+        container
+        display='flex'
+        sx={{ justifyContent: { md: 'space-around', lg: 'space-evenly' } }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={3}
+          sx={{ ml: { xs: '15px', lg: 0 }, mr: { xs: '5px', md: '0' } }}
+        >
           <Logo />
         </Grid>
-        <Grid item>
+        <Grid item xs={8} lg={6} sx={{ ml: { xs: '15px' } }}>
           <Link
             href='#'
             underline='hover'
             sx={{
               color: '#231E1E',
               fontFamily: 'Inter',
-              fontSize: '16px',
+              fontSize: { xs: '14px', lg: '16px' },
               lineHeight: '24px',
               textAlign: 'left',
-              pr: '48px',
+
+              pr: { xs: '20px', sm: '30px', lg: '48px' },
             }}
           >
             {'Products'}
@@ -40,10 +54,10 @@ export const Menu = () => {
             sx={{
               color: '#231E1E',
               fontFamily: 'Inter',
-              fontSize: '16px',
+              fontSize: { xs: '14px', lg: '16px' },
               lineHeight: '24px',
               textAlign: 'left',
-              pr: '48px',
+              pr: { xs: '20px', sm: '30px', lg: '48px' },
             }}
           >
             {'Soluctions'}
@@ -54,10 +68,10 @@ export const Menu = () => {
             sx={{
               color: '#231E1E',
               fontFamily: 'Inter',
-              fontSize: '16px',
+              fontSize: { xs: '14px', lg: '16px' },
               lineHeight: '24px',
               textAlign: 'left',
-              pr: '48px',
+              pr: { xs: '20px', sm: '30px', lg: '48px' },
             }}
           >
             {'Resources'}
@@ -68,7 +82,7 @@ export const Menu = () => {
             sx={{
               color: '#231E1E',
               fontFamily: 'Inter',
-              fontSize: '16px',
+              fontSize: { xs: '14px', lg: '16px' },
               lineHeight: '24px',
               textAlign: 'left',
             }}
@@ -77,18 +91,28 @@ export const Menu = () => {
           </Link>
         </Grid>
       </Grid>
-      <Grid xs='6' item container>
+      <Grid
+        lg={6}
+        item
+        container
+        sx={{
+          alignItems: 'flex-start',
+          justifyContent: { xs: 'center', lg: 'flex-end' },
+          mt: { xs: '10px', lg: '0' },
+          mb: { xs: '10px', lg: '25px' },
+        }}
+      >
         <Button
           sx={{
             backgroundColor: '#DAC2F2',
             borderRadius: '24px',
             width: '192px',
-            height: '48px',
+            height: { xs: '35px', md: '40px', lg: '48px' },
             color: '#231E1E',
             fontFamily: 'Inter',
             fontSize: '16px',
             lineheight: '24px',
-            mr: '64px',
+            mr: { xs: '6px', md: '50px', lg: '64px' },
             textTransform: 'none',
           }}
         >

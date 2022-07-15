@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { ReactComponent as Quotation } from '../assets/quotation-mark.svg'
 
 export default function Quote() {
@@ -9,6 +9,8 @@ export default function Quote() {
       sx={{
         backgroundColor: '#231E1E',
         height: '613px',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <Grid
@@ -18,20 +20,22 @@ export default function Quote() {
           height: '357px',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
-          alignItems: 'center',
+          alignItems: 'flex-start',
+          width: { xs: '80vw', lg: '948px' },
+          mt: { xs: '80px', lg: '128px' },
+          mb: { xs: '80px', lg: '128px' },
         }}
       >
         <Grid item>
           <Quotation />
         </Grid>
-        <Grid
+        <Typography
           item
           sx={{
             color: '#F1F0F0',
             fontFamily: 'Inter',
-            fontSize: '24px',
-            lineHeight: '40px',
-            width: '948px',
+            fontSize: { xs: '20px', lg: '24px' },
+            lineHeight: { xs: '30px', lg: '40px' },
             textAlign: 'left',
           }}
         >
@@ -39,7 +43,7 @@ export default function Quote() {
           claris et quasi naturalem. In quo enim inter mediocrem animadversionem
           atque insitam in malis dolor, non numquam. At vero eos et dolore suo
           sanciret.
-        </Grid>
+        </Typography>
         <Grid
           item
           sx={{
