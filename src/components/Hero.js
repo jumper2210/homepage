@@ -1,8 +1,9 @@
 import React from 'react'
 import { Grid, Box } from '@mui/material'
+import { useCmsContentContext } from '../contexts/CmsContentContext'
 
-export const Hero = ({ heroContent }) => {
-  const { text, img } = heroContent
+export const Hero = () => {
+  const { contentForPage } = useCmsContentContext()
 
   return (
     <Grid
@@ -15,7 +16,7 @@ export const Hero = ({ heroContent }) => {
         flexDirection: { md: 'column', lg: 'row' },
       }}
     >
-      {text && (
+      {contentForPage && (
         <Grid
           item
           sx={{
@@ -30,10 +31,10 @@ export const Hero = ({ heroContent }) => {
             mb: { xs: '40px', lg: '0px' },
           }}
         >
-          {text}
+          {contentForPage[0].text}
         </Grid>
       )}
-      {img && (
+      {contentForPage && (
         <Grid
           item
           sx={{
@@ -49,7 +50,7 @@ export const Hero = ({ heroContent }) => {
               height: '100%',
             }}
             alt='The house from the offer.'
-            src={img}
+            src={contentForPage[0].img}
           />
         </Grid>
       )}

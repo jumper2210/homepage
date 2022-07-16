@@ -1,9 +1,10 @@
 import React from 'react'
 import { Grid, Typography } from '@mui/material'
 import { ReactComponent as Quotation } from '../assets/quotation-mark.svg'
+import { useCmsContentContext } from '../contexts/CmsContentContext'
 
-export default function Quote({ quoteContent }) {
-  const { text, author } = quoteContent
+export default function Quote() {
+  const { contentForPage } = useCmsContentContext()
 
   return (
     <Grid
@@ -31,7 +32,7 @@ export default function Quote({ quoteContent }) {
         <Grid item>
           <Quotation />
         </Grid>
-        {text && (
+        {contentForPage && (
           <Typography
             sx={{
               color: '#F1F0F0',
@@ -41,13 +42,10 @@ export default function Quote({ quoteContent }) {
               textAlign: 'left',
             }}
           >
-            Torquatos nostros? quos dolores eos, qui studiose antiqua
-            persequeris, claris et quasi naturalem. In quo enim inter mediocrem
-            animadversionem atque insitam in malis dolor, non numquam. At vero
-            eos et dolore suo sanciret.
+            {contentForPage[1].text}
           </Typography>
         )}
-        {author && (
+        {contentForPage && (
           <Grid
             item
             sx={{
@@ -58,7 +56,7 @@ export default function Quote({ quoteContent }) {
               textAlign: 'left',
             }}
           >
-            John Doe, Street Artist
+            {contentForPage[1].author}
           </Grid>
         )}
       </Grid>

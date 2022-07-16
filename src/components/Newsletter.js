@@ -31,7 +31,6 @@ export const Newsletter = () => {
   const NewsletterSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
   })
-  console.log(responseMessage)
 
   return (
     <Grid

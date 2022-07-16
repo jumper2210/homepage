@@ -15,10 +15,24 @@ export const useCmsContentContext = () => {
 
 export const CmsContentProvider = ({ children }) => {
   const [pages, setPages] = useState()
+  const [contentForPage, setContentForPage] = useState()
+
+  const fetchContentPerPage = async (data) => {
+    const { id } = data?.find((page) => {
+      return page.url === '/'
+    })
+
+    if (id) {
+      const response = await https.get(`/page/${id}`)
+      const { sections } = response?.data
+      setContentForPage(sections)
+    }
+  }
 
   const fetchPages = async () => {
     const response = await https.get('/pages')
     const responseArr = response.data
+    fetchContentPerPage(responseArr)
     setPages(responseArr)
   }
 
@@ -29,8 +43,9 @@ export const CmsContentProvider = ({ children }) => {
   const value = useMemo(
     () => ({
       pages,
+      contentForPage,
     }),
-    [pages]
+    [pages, contentForPage]
   )
 
   return (
