@@ -47,7 +47,6 @@ export default function Quote() {
         )}
         {contentForPage && (
           <Typography
-            item
             sx={{
               color: '#989898',
               fontFamily: 'Inter',

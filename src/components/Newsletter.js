@@ -50,7 +50,7 @@ export const Newsletter = () => {
           justifyContent: 'space-between',
           flexDirection: 'column',
           height: { xs: '205px', lg: '168px' },
-          width: { xs: '80vw', lg: '624px' },
+          width: { xs: '100vw', sm: '80vw', lg: '624px' },
           alignItems: 'center',
         }}
       >
