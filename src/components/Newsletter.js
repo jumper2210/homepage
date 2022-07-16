@@ -40,6 +40,7 @@ export const Newsletter = () => {
         pt: { xs: '80px', lg: '128px' },
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'column',
       }}
     >
       <Grid
@@ -48,7 +49,7 @@ export const Newsletter = () => {
         sx={{
           justifyContent: 'space-between',
           flexDirection: 'column',
-          height: { xs: '330px', lg: '238px' },
+          height: { xs: '205px', lg: '168px' },
           width: { xs: '80vw', lg: '624px' },
           alignItems: 'center',
         }}
@@ -91,7 +92,7 @@ export const Newsletter = () => {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                flexDirection: 'column',
+                width: '100%',
               }}
             >
               <Field
@@ -110,8 +111,8 @@ export const Newsletter = () => {
                   height: '48px',
                   textTransform: 'none',
                   color: '#231E1E',
-                  ml: { xs: '0', lg: '16px' },
-                  mt: { xs: '20px', lg: '0' },
+                  ml: { xs: '16px', lg: '16px' },
+                  '&:hover': { backgroundColor: '#DAC2F2' },
                 }}
               >
                 Submit
@@ -119,21 +120,22 @@ export const Newsletter = () => {
             </Form>
           </Grid>
         </Formik>
-        {responseMessage && (
-          <Grid
-            item
-            sx={{
-              color: '#5EDC4B',
-              fontFamily: 'Inter',
-              fontSize: '14px',
-              lineHeight: '22px',
-              textAlign: 'center',
-            }}
-          >
-            {responseMessage}
-          </Grid>
-        )}
       </Grid>
+      {responseMessage && (
+        <Grid
+          item
+          sx={{
+            color: '#5EDC4B',
+            fontFamily: 'Inter',
+            fontSize: '14px',
+            lineHeight: '22px',
+            textAlign: 'center',
+            pt: '48px',
+          }}
+        >
+          {responseMessage}
+        </Grid>
+      )}
     </Grid>
   )
 }

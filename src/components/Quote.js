@@ -20,13 +20,13 @@ export default function Quote() {
         container
         item
         sx={{
-          height: '357px',
+          height: { xs: '80vh', sm: '48vh', lg: '357px' },
           flexDirection: 'column',
           justifyContent: 'space-evenly',
           alignItems: 'flex-start',
           width: { xs: '80vw', lg: '948px' },
-          mt: { xs: '80px', lg: '128px' },
-          mb: { xs: '80px', lg: '128px' },
+          mt: { xs: '30px', lg: '128px' },
+          mb: { xs: '50px', lg: '128px' },
         }}
       >
         <Grid item>
@@ -37,8 +37,8 @@ export default function Quote() {
             sx={{
               color: '#F1F0F0',
               fontFamily: 'Inter',
-              fontSize: { xs: '20px', lg: '24px' },
-              lineHeight: { xs: '30px', lg: '40px' },
+              fontSize: { xs: '13px', md: '18px', lg: '24px' },
+              lineHeight: { xs: '25px', md: '30px', lg: '40px' },
               textAlign: 'left',
             }}
           >
@@ -46,7 +46,7 @@ export default function Quote() {
           </Typography>
         )}
         {contentForPage && (
-          <Grid
+          <Typography
             item
             sx={{
               color: '#989898',
@@ -57,7 +57,7 @@ export default function Quote() {
             }}
           >
             {contentForPage[1].author}
-          </Grid>
+          </Typography>
         )}
       </Grid>
     </Grid>
