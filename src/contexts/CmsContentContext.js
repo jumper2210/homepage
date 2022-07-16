@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useState,
   useMemo,
+  useCallback,
 } from 'react'
 import https from '../https'
 
@@ -29,16 +30,16 @@ export const CmsContentProvider = ({ children }) => {
     }
   }
 
-  const fetchPages = async () => {
+  const fetchPages = useCallback(async () => {
     const response = await https.get('/pages')
     const responseArr = response.data
     fetchContentPerPage(responseArr)
     setPages(responseArr)
-  }
+  }, [])
 
   useEffect(() => {
     fetchPages()
-  }, [])
+  }, [fetchPages])
 
   const value = useMemo(
     () => ({
