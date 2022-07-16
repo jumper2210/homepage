@@ -1,8 +1,11 @@
 import React from 'react'
 import { Grid, Link, Button } from '@mui/material'
 import { ReactComponent as Logo } from '../assets/logo.svg'
+import { useCmsContentContext } from '../contexts/CmsContentContext'
 
 export const Menu = () => {
+  const { pages } = useCmsContentContext()
+
   return (
     <Grid
       container
@@ -33,62 +36,22 @@ export const Menu = () => {
           <Logo />
         </Grid>
         <Grid item xs={8} lg={6} sx={{ ml: { xs: '15px' } }}>
-          <Link
-            href='#'
-            underline='hover'
-            sx={{
-              color: '#231E1E',
-              fontFamily: 'Inter',
-              fontSize: { xs: '14px', lg: '16px' },
-              lineHeight: '24px',
-              textAlign: 'left',
-
-              pr: { xs: '20px', sm: '30px', lg: '48px' },
-            }}
-          >
-            {'Products'}
-          </Link>
-          <Link
-            href='#'
-            underline='hover'
-            sx={{
-              color: '#231E1E',
-              fontFamily: 'Inter',
-              fontSize: { xs: '14px', lg: '16px' },
-              lineHeight: '24px',
-              textAlign: 'left',
-              pr: { xs: '20px', sm: '30px', lg: '48px' },
-            }}
-          >
-            {'Soluctions'}
-          </Link>
-          <Link
-            href='#'
-            underline='hover'
-            sx={{
-              color: '#231E1E',
-              fontFamily: 'Inter',
-              fontSize: { xs: '14px', lg: '16px' },
-              lineHeight: '24px',
-              textAlign: 'left',
-              pr: { xs: '20px', sm: '30px', lg: '48px' },
-            }}
-          >
-            {'Resources'}
-          </Link>
-          <Link
-            href='#'
-            underline='hover'
-            sx={{
-              color: '#231E1E',
-              fontFamily: 'Inter',
-              fontSize: { xs: '14px', lg: '16px' },
-              lineHeight: '24px',
-              textAlign: 'left',
-            }}
-          >
-            {'About'}
-          </Link>
+          {pages?.map(({ url, id }) => (
+            <Link
+              key={id}
+              underline='hover'
+              sx={{
+                color: '#231E1E',
+                fontFamily: 'Inter',
+                fontSize: { xs: '14px', lg: '16px' },
+                lineHeight: '24px',
+                textAlign: 'left',
+                pr: { xs: '20px', sm: '30px', lg: '48px' },
+              }}
+            >
+              {url.slice(1)}
+            </Link>
+          ))}
         </Grid>
       </Grid>
       <Grid
